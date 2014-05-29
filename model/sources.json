@@ -1,0 +1,47 @@
+[
+    {
+        "Name": "pi:searchtest2012",
+        "ID": 1,
+        "LastCrawl": "2013-08-01T09:34:02.7404326-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-1"
+    },
+    {
+        "Name": "pi:dlafpi",
+        "ID": 2,
+        "LastCrawl": "2013-08-01T09:34:15.4886455-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-2"
+    },
+    {
+        "Name": "af:\\\\dlafpi\\testdb1",
+        "ID": 3,
+        "LastCrawl": "2013-07-29T15:38:31.2540617-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-3"
+    },
+    {
+        "Name": "af:\\\\dlafpi\\testdb2",
+        "ID": 4,
+        "LastCrawl": "2013-07-29T15:38:27.9573766-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-4"
+    },
+    {
+        "Name": "af:\\\\chad-laptop\\terrebonnePower",
+        "ID": 5,
+        "LastCrawl": "2013-08-01T09:34:46.6351311-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-5"
+    }
+]

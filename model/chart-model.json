@@ -1,0 +1,146 @@
+[
+        {
+            "id": 0,
+            "period": "12 am to 1 am",
+            "maximum": 70.00,
+            "minimum": 40.00
+        },
+        {
+            "id": 1,
+            "period": "1 am to 2 am",
+            "maximum": 88.00,
+            "minimum": 27.00
+        },
+        {
+            "id": 2,
+            "period": "2 am to 3 am",
+            "maximum": 84.00,
+            "minimum": 13.00
+        },
+        {
+            "id": 3,
+            "period": "3 am to 4 am",
+            "maximum": 71.00,
+            "minimum": 9.00
+        },
+        {
+            "id": 4,
+            "period": "4 am to 5 am",
+            "maximum": 67.00,
+            "minimum": 21.00
+        },
+        {
+            "id": 5,
+            "period": "5 am to 6 am",
+            "maximum": 70.00,
+            "minimum": 37.00
+        },
+        {
+            "id": 6,
+            "period": "5 am to 6 am",
+            "maximum": 56.00,
+            "minimum": 40.00
+        },
+        {
+            "id": 7,
+            "period": "6 am to 7 am",
+            "maximum": 95.00,
+            "minimum": 22.00
+        },
+        {
+            "id": 8,
+            "period": "7 am to 8 am",
+            "maximum": 78.00,
+            "minimum": 40.00
+        },
+        {
+            "id": 9,
+            "period": "8 am to 9 am",
+            "maximum": 61.00,
+            "minimum": 24.00
+        },
+        {
+            "id": 10,
+            "period": "10 am to 11 am",
+            "maximum": 91.00,
+            "minimum": 40.00
+        },
+        {
+            "id": 11,
+            "period": "11 am to 12 pm",
+            "maximum": 67.00,
+            "minimum": 11.00
+        },
+        {
+            "id": 12,
+            "period": "12 pm to 1 pm",
+            "maximum": 65.00,
+            "minimum": 29.00
+        },
+        {
+            "id": 13,
+            "period": "1 pm to 2 pm",
+            "maximum": 63.00,
+            "minimum": 18.00
+        },
+        {
+            "id": 14,
+            "period": "2 pm to 3 pm",
+            "maximum": 94.00,
+            "minimum": 43.00
+        },
+        {
+            "id": 15,
+            "period": "3 pm to 4 pm",
+            "maximum": 55.00,
+            "minimum": 37.00
+        },
+        {
+            "id": 16,
+            "period": "4 pm to 5 pm",
+            "maximum": 88.00,
+            "minimum": 44.00
+        },
+        {
+            "id": 17,
+            "period": "5 pm to 6 pm",
+            "maximum": 88.00,
+            "minimum": 45.00
+        },
+        {
+            "id": 18,
+            "period": "6 pm to 7 pm",
+            "maximum": 58.00,
+            "minimum": 35.00
+        },
+        {
+            "id": 19,
+            "period": "7 pm to 8 pm",
+            "maximum": 100.00,
+            "minimum": 34.00
+        },
+        {
+            "id": 20,
+            "period": "8 pm to 9 pm",
+            "maximum": 67.00,
+            "minimum": 7.00
+        },
+        {
+            "id": 21,
+            "period": "9 pm to 10 pm",
+            "maximum": 79.00,
+            "minimum": 39.00
+        },
+        {
+            "id": 22,
+            "period": "10 pm to 11 pm",
+            "maximum": 79.00,
+            "minimum": 36.00
+        },
+        {
+            "id": 23,
+            "period": "11 pm to 12 am",
+            "maximum": 93.00,
+            "minimum": 29.00
+        }
+]

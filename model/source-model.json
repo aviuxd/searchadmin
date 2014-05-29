@@ -1,0 +1,72 @@
+[
+    {
+        "Name": "pi:searchtest2012",
+        "ID": 1,
+        "LastCrawl": "2013-09-09T13:33:26.9606798-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-1",
+        "LastErrorMessage": null
+    },
+    {
+        "Name": "pi:dlafpi",
+        "ID": 2,
+        "LastCrawl": "2013-09-09T13:34:15.2865994-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-2",
+        "LastErrorMessage": null
+    },
+    {
+        "Name": "af:\\\\dlafpi\\testdb1",
+        "ID": 3,
+        "LastCrawl": "2013-09-09T13:33:35.9131529-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-3",
+        "LastErrorMessage": null
+    },
+    {
+        "Name": "af:\\\\dlafpi\\testdb2",
+        "ID": 4,
+        "LastCrawl": "2013-08-21T10:41:41.7397863-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-4",
+        "LastErrorMessage": null
+    },
+    {
+        "Name": "af:\\\\kmitawpc\\nugreen",
+        "ID": 5,
+        "LastCrawl": "2013-09-09T13:34:34.6843884-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-5",
+        "LastErrorMessage": null
+    },
+    {
+        "Name": "af:\\\\CHAD-LAPTOP\\TestDB-CHAD-LAPTOP",
+        "ID": 6,
+        "LastCrawl": "2013-09-09T13:33:38.3037167-07:00",
+        "CrawlerHost": "SearchDemo.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-6",
+        "LastErrorMessage": "Error: Crawler unable to continue incremental crawl, need to switch to a full crawl!"
+    },
+    {
+        "Name": "af:\\\\CHAD-LAPTOP\\TestDB-CHAD-LAPTOP2",
+        "ID": 6,
+        "LastCrawl": "2013-09-09T13:33:38.3037167-07:00",
+        "CrawlerHost": "asingh6420.osisoft.int",
+        "State": "Ready",
+        "SqlServer": " .",
+        "SqlDatabase": "OSISearchShard-7",
+        "LastErrorMessage": "Error: Crawler unable to continue incremental crawl, need to switch to a full crawl!"
+    }
+]

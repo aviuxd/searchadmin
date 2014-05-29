@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>
+
+          OSIsoft PI Search Admin
+
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+    
+    <script type="text/javascript">
+    WebFontConfig = {
+        google: { families: [ 'Average+Sans::latin', 'Average::latin', 'Roboto::latin', 'Oxygen::latin', 'Roboto+Slab::latin' ] }
+    };
+        (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })(); 
+    </script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui-1.10.2.custom.js"></script>
+
+  </head>
+
+  <body>
+
+          <!-- Login-Form
+      ================================================== -->
+
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading"><img src="assets/images/logo-header.png">PI Search Administration</h2>
+        <input class="input-block-level" placeholder="Username" autofocus="" type="text">
+        <input class="input-block-level" placeholder="Password" type="password">
+        <label class="checkbox">
+          <input value="remember-me" type="checkbox"> Remember me
+        </label>
+          <button class="btn btn-large btn-primary btn-block" type="submit" >Log In</button>
+          <a href="#"><div class="btn btn-link btn-block login-help-link" >Need Login Help?</div></a> <!--style="width:145px; ; display:block;"-->
+      </form>
+
+    </div> <!-- /container -->
+
+          <!-- Footer
+      ================================================== -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-3 col-9 col-sm-9 col-lg-9">
+        <img src="assets/images/logo-footer.png">
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/bootstrap.min.js"></script>
+
+    <script type='text/javascript'>
+        $(document).ready(function(){
+         $(".form-signin").submit(function(){
+            window.location.href='../search-admin-dev/dashboard.html';
+            return false;
+          });
+        });
+
+    </script>
+
+</body></html>

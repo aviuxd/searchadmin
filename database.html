@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+  
+    OSIsoft PI Search Admin
+  
+</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/jquery-ui-1.10.2.custom.css" rel="stylesheet">
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.10.2.custom.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="../assets/js/html5shiv.js"></script>
+  <script src="../assets/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Favicons -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://getbootstrap.com/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://getbootstrap.com/assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://getbootstrap.com/assets/ico/apple-touch-icon-72-precomposed.png">
+                <link rel="apple-touch-icon-precomposed" href="http://getbootstrap.com/assets/ico/apple-touch-icon-57-precomposed.png">
+                               <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.png"> -->
+
+<!-- Place anything custom after this. -->
+<script>
+
+</script>
+
+</head>
+
+<body >
+
+      <!-- Header
+      ================================================== -->
+<div class="navbar navbar-static-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-list"><img src="assets/images/nav-collapse-icon.png"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="assets/images/logo-header.png">PI Search Administration</a>
+  <!--       <div class="navbar-right hidden-xs hidden-sm" style="float:right;">
+          <a class="navbar-right" style="float:right; height:18px;" href="#"><img src="assets/images/icon-help.png"></a>
+
+          <a class="navbar-logout" style="float:right; color:#fff; font-size:16px;" href="index.html">Logout</a>
+
+          <p class="navbar-right" style="color:#fff; font-size:16px;" href="#">Logged in as Kevin Lee</p>
+        </div> -->
+      
+        <div class="navbar-collapse collapse hidden-lg hidden-md">
+          <ul class="nav navbar-nav pull-right osi-topnav">
+                  <li class=""><a href="test-experiment.html">Search Dashboard</a></li>
+                         <li class=""><a href="database.html">Databases</a></li>
+            <li class="active"><a href="search-settings.html">Settings</a></li>
+                                     <li><a href="index.html">Log out</a></li>
+                                          <li><a href="#help">Help</a></li>
+          </ul>
+        </div>
+
+    </div>
+  </div>
+</div>
+<!-- /Header -->
+
+
+<div class="container"> <!--Container Begins-->
+
+  <div class="row"> <!--Row Begins-->
+
+
+   
+      <!-- Navigation
+      ================================================== -->
+    <div class="col-lg-3 osi-sidebar hidden-xs hidden-sm" >
+      <div class="affix-top">
+        <ul class="nav nav-pills nav-stacked navbar-collapse collapse">
+                  <li class=""><a href="dashboard.html">Search Dashboard</a></li>
+             <li class="active"><a href="database.html">Databases</a></li>
+            <li class=""><a href="search-settings.html">Settings</a></li>
+            <li class=""><a href="test-page-1.html">Test Page</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <!-- Body
+    ================================================== -->
+    <div class="col-lg-9">
+      <h3 class="pull-left vertical-margin">Databases</h3>
+      <button class="btn btn-default btn-small page-header-btn-margin pull-left">Rebuild All Indexes</button>
+    </div>
+
+    <div class="row">
+
+          <div id="content-column-1" class="col-lg-4 vertical-margin">
+          </div>
+
+          <div id="content-column-2" class="col-lg-4 vertical-margin" >
+          </div>
+
+    </div>
+
+  </div> <!--Row Ends-->
+</div><!--Container Ends-->
+
+
+
+      <!-- Edit DB Dialog
+      ================================================== -->
+<div id="edit-db-modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title pull-left">Edit Database&nbsp;-&nbsp;</h4>
+        <h4 class="modal-title" id="SourceName"></h4>
+      </div>
+      
+      <!-- Modal Body-->
+      <div class="modal-body">
+        <form id="database-form" class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">SQL Server</label>
+              <div class="col-lg-9">
+                <input id="SourceServer" class="form-control pull-left">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">SQL Database</label>
+              <div class="col-lg-9">
+                <input id="SourceDatabase" class="form-control pull-left">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Crawler Host</label>
+              <div class="col-lg-9">
+                <input id="CrawlerHostName" class="form-control pull-left">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Last Crawled</label>
+              <div class="col-lg-9">
+                <p id="LastCrawlTime" class="form-control-static"></p>
+              </div>
+            </div>
+        </form>
+      </div>
+
+      <!-- Modal Footer-->
+      <div class="modal-footer">
+        <button type="button" id="save-database" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-link" data-dismiss="modal" >Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- data-dismiss="modal" -->
+
+
+      <!-- Footer
+      ================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-offset-3 col-lg-9">
+        <img src="assets/images/logo-footer.png">
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+      <!-- JS and analytics only. -->
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="js/bootstrap.min.js"></script>
+      <script src="js/jquery.json-2.4.min.js"></script>
+<!-- <script src="js/knockout-2.3.0.debug.js"></script> -->
+
+<script type="text/javascript">
+
+var SourceURL = 'http://searchdemo:21530/osisoft/search/admin/sources?callback';
+
+      // SHOW POP UP and CALL INITIATE LOADING OF DATA FROM API
+      // ==================================================
+  $("#edit-db-modal").delegate("#save-database", "click",function(){
+    var _SourceName = $('#SourceName').html();
+    var _SourceServer = $('#SourceServer').val();
+    var _SourceDatabase = $('#SourceDatabase').val();
+    var _CrawlerHostName = $('#CrawlerHostName').val();
+
+    // var frm = $('#database-form').serializeArray();
+    
+    // frm.Name = _SourceName;
+    // frm.SqlServer = _SourceServer;
+    // frm.SqlDatabase = _SourceDatabase;
+    // frm.CrawlerHost = _CrawlerHostName;
+
+    // var dat1 = JSON.stringify($('#database-form').serializeArray());
+    var JSONdata = JSON.stringify({ Name: _SourceName, SqlServer: _SourceServer, SqlDatabase: _SourceDatabase, CrawlerHost: _CrawlerHostName }, null, " ");
+    console.log(JSONdata);
+
+    // $.ajax({
+    //   type:'PUT',
+    //   dataType: 'json',
+    //   data:JSONdata,
+    //   url: 'model/source-model.json',
+    // });
+      function loadfail(){
+        alert("Error: Failed to PUT Data");
+      }; //end of LOADFAIL
+
+      function parse(data){
+        console.log(data);
+
+        var _Message   = data.Message;
+        var _Source    = data.Source;
+        var _ErrorCode = data.ErrorCode;
+
+
+        console.log(_Message);
+        console.log(_Source);
+        console.log(_ErrorCode);
+      };
+
+  $.ajax({
+    type:'PUT',
+    url: SourceURL,    // name of file with our data
+    dataType: 'jsonp',    // type of file we will be reading
+    jsonp: 'callback',
+    contentType: "application/json",
+    jsonpCallback: 'processResult', //JSONP handler in SearchDemo
+    data:JSONdata,
+    success: parse,// name of function to call when done reading file
+    error: loadfail     // name of function to call when failed to read
+    });
+
+    return false;
+  });
+
+
+      // SHOW POP UP and CALL INITIATE LOADING OF DATA FROM API
+      // ==================================================
+  $( "body" ).delegate(".edit-db-button", "click", function(){
+      var GlobalVariable1 = this.id;
+    $('#edit-db-modal').modal('show');
+    LoadPopUpData(GlobalVariable1);
+  }); 
+
+
+      // Load Popup Content
+      // ==================================================
+  function LoadPopUpData(ButtonID) {
+
+    function loadfail(){
+      alert("Error: Failed to load file!");
+    }; //end of LOADFAIL
+
+    function LoadFormData(data){
+      //console.log(data);
+      $.each(data, function(){
+        var LastCrawlTime   = this.LastCrawl;
+        var ID              = this.ID;
+        var CrawlerHostName = this.CrawlerHost;
+        var SourceName      = this.Name;
+        var SourceState     = this.State;
+        var SourceDatabase  = this.SqlDatabase;
+        var SourceServer    = this.SqlServer;
+        if( ButtonID == ID ){
+          $("#SourceName").text(SourceName);
+          $("#SourceServer").val(SourceServer);
+          $("#SourceDatabase").val(SourceDatabase); 
+          $("#CrawlerHostName").val(CrawlerHostName);
+          $("#LastCrawlTime").text(LastCrawlTime);
+        };
+      });
+    };
+
+    $.ajax({
+      type: 'GET',
+      url: SourceURL,    // name of file with our data
+      dataType: 'jsonp',    // type of file we will be reading
+      jsonp: 'callback',
+      jsonpCallback: 'processResult', //JSONP handler in SearchDemo
+      success: LoadFormData,// name of function to call when done reading file
+      error: loadfail     // name of function to call when failed to read
+      });
+  };
+
+      // READY FUNCTION
+      // ================================================== 
+
+$(document).ready(function(){
+
+  function loadfail(){
+    alert("Error: Failed to load file!");
+  }; //end of LOADFAIL
+
+  function parse(data){
+    var LoopCount = 1;
+
+    $.each(data, function(){
+
+      var LastCrawlTime   = this.LastCrawl;
+      var ID              = this.ID;
+      var CrawlerHostName = this.CrawlerHost;
+      var SourceName      = this.Name;
+      var SourceState     = this.State;
+      var SourceDatabase  = this.SqlDatabase;
+      var SourceServer    = this.SqlServer;
+
+
+        if(SourceState == 'Ready' && LoopCount%2 == 1){
+            $('#content-column-1').append(
+            '<div class="panel panel-primary vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                                              //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-green.png">'+' '+SourceName+'</h3>' +//First field Value  
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Database</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                        '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button data-toggle="modal" data-target="#edit-db-modal"onclick="FindButtonID"
+                      '</div>' +
+                  '</div>'
+                  ); 
+            LoopCount = LoopCount + 1;  
+        }//End of IF for READ/ODD
+
+
+        else if(SourceState == 'Ready' && LoopCount%2 == 0){
+            $('#content-column-2').append(
+            '<div class="panel panel-primary vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-green.png">'+' '+SourceName+'</h3>' +      //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                      '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                      '</div>' +
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        } //End of IF for READ/EVEN
+
+
+        else if(SourceState == 'Indexing' && LoopCount%2 == 1){
+            $('#content-column-1').append('<div class="panel panel-primary vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-index.png">' +' '+SourceName+'</h3>' +     //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                      '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        } // End of IF for INDEXING/ODD
+
+
+        else if (SourceState == 'Indexing' && LoopCount%2 == 0){
+            $('#content-column-1').append('<div class="panel panel-primary vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-index.png">' +' '+SourceName+'</h3>' +     //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                        '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                      '</div>' +
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        } // End of IF for INDEXING/EVEN 
+
+
+        else if(SourceState == 'Error' && LoopCount%2 == 1){
+            $('#content-column-1').append('<div class="panel panel-danger vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-error.png">'+' '+SourceName+'</h3>' +      //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                      '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                      '</div>' +
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        } // End of IF for ERROR/ODD 
+
+
+        else if (SourceState == 'Error' && LoopCount%2 == 0){
+            $('#content-column-1').append('<div class="panel panel-danger vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-error.png">'+' '+SourceName+'</h3>' +      //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                        '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                      '</div>' +
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        } // End of IF for ERROR/EVEN 
+
+
+        else if (SourceState == 'New' && LoopCount%2 == 1){
+            $('#content-column-1').append('<div class="panel panel-primary vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-error.png">'+' '+SourceName+'</h3>' +      //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                        '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                      '</div>' +
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        } // End of IF for ERROR/EVEN 
+
+
+        else if (SourceState == 'New' && LoopCount%2 == 0){
+            $('#content-column-1').append('<div class="panel panel-primary vertical-margin">' + //Ready Div With Blue theme
+                  '<div class="panel-heading">' +                                                                    //First Field Label 
+                    '<h3 class="panel-title"><img src="assets/images/icon-error.png">'+' '+SourceName+'</h3>' +      //First field Value and so on.. 
+                  '</div>' +
+                  '<div class="panel-body">' +
+                      '<div>' +
+                        '<p class="pull-left label-width">SQL Server</p>' +
+                        '<p class="pull-left">'+SourceServer+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Index Location</p>' +
+                        '<p class="pull-left">'+SourceDatabase+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Crawler Host</p>' +
+                        '<p class="pull-left">'+CrawlerHostName+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<p class="pull-left label-width">Last Crawled</p>' +
+                        '<p class="pull-left">'+LastCrawlTime+'</p>' +
+                      '</div>' +
+                      '<div>' +
+                        '<button class="btn btn-link btn-md pull-left" style="margin-left:-13px;">Rebuild Index</button>' + // REBUILD Button
+                        '<button type="button" id="'+ID+'"'+ 'class="btn btn-link btn-md pull-left edit-db-button" style="margin-left:10px;">Edit</button>'+   // EDIT Button  data-toggle="modal" data-target="#edit-db-modal"
+                      '</div>' +
+                  '</div>'
+            ); 
+          LoopCount = LoopCount + 1; 
+        }; // End of IF for ERROR/EVEN 
+    }); // end of EACH Loop
+  };//end of PARSE Function
+
+  $.ajax({
+    type: 'GET',
+    url: SourceURL,    // name of file with our data
+    dataType: 'jsonp',    // type of file we will be reading
+    jsonp: 'callback',
+    jsonpCallback: 'processResult', //JSONP handler in SearchDemo
+    success: parse,// name of function to call when done reading file
+    error: loadfail     // name of function to call when failed to read
+    });
+
+  // $.ajax({
+  //   type: 'GET',
+  //   url: 'model/source-model.json',    // name of file with our data
+  //   dataType: 'json',    // type of file we will be reading
+  //   success: parse,// name of function to call when done reading file
+  //   error: loadfail     // name of function to call when failed to read
+  //   });
+//
+}); //End Of READY function
+
+</script>
+
+
+<!-- analytics
+================================================== -->
+</body></html>
