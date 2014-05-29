@@ -1,6 +1,6 @@
 ## OSISoft Search Admin ##
 
-This project was created as a design prototype for Search Administration page for OSISoft Search tool.
+This project was created as a design prototype for Search Administration page for OSISoft Search tool. Overall uses Bootstrap for generating layout.
 
 ### Dashboard ###
 
