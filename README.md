@@ -2,7 +2,7 @@
 
 This project was created as a design prototype for Search Administration page for OSISoft Search tool.
 
-### Dashboard ### 
+### Dashboard ###
 
 Showcases use of D3.js for generating chart.
 
