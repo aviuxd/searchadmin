@@ -1,29 +1,15 @@
-# README #
+## OSISoft Search Admin ##
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This project was created as a design prototype for Search Administration page for OSISoft Search tool.
 
-### What is this repository for? ###
+### Dashboard ### 
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Showcases use of D3.js for generating chart.
 
-### How do I get set up? ###
+### Database list ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Shows loading of data from JSON data API. There are different statuses according to the status of the loaded information.
 
-### Contribution guidelines ###
+### Settings Page ###
 
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Uses jQuery UI Slider for changing setting.
