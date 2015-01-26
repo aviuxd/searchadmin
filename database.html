@@ -89,7 +89,7 @@
                   <li class=""><a href="dashboard.html">Search Dashboard</a></li>
              <li class="active"><a href="database.html">Databases</a></li>
             <li class=""><a href="search-settings.html">Settings</a></li>
-            <li class=""><a href="test-page-1.html">Test Page</a></li>
+<!--             <li class=""><a href="test-page-1.html">Test Page</a></li> -->
         </ul>
       </div>
     </div>
@@ -194,7 +194,7 @@
 
 <script type="text/javascript">
 
-var SourceURL = 'http://searchdemo:21530/osisoft/search/admin/sources?callback';
+var SourceURL = 'model/source-model.json';
 
       // SHOW POP UP and CALL INITIATE LOADING OF DATA FROM API
       // ==================================================
@@ -204,14 +204,6 @@ var SourceURL = 'http://searchdemo:21530/osisoft/search/admin/sources?callback';
     var _SourceDatabase = $('#SourceDatabase').val();
     var _CrawlerHostName = $('#CrawlerHostName').val();
 
-    // var frm = $('#database-form').serializeArray();
-    
-    // frm.Name = _SourceName;
-    // frm.SqlServer = _SourceServer;
-    // frm.SqlDatabase = _SourceDatabase;
-    // frm.CrawlerHost = _CrawlerHostName;
-
-    // var dat1 = JSON.stringify($('#database-form').serializeArray());
     var JSONdata = JSON.stringify({ Name: _SourceName, SqlServer: _SourceServer, SqlDatabase: _SourceDatabase, CrawlerHost: _CrawlerHostName }, null, " ");
     console.log(JSONdata);
 
@@ -241,15 +233,14 @@ var SourceURL = 'http://searchdemo:21530/osisoft/search/admin/sources?callback';
   $.ajax({
     type:'PUT',
     url: SourceURL,    // name of file with our data
-    dataType: 'jsonp',    // type of file we will be reading
-    jsonp: 'callback',
-    contentType: "application/json",
-    jsonpCallback: 'processResult', //JSONP handler in SearchDemo
-    data:JSONdata,
+    dataType: 'json',    // type of file we will be reading
     success: parse,// name of function to call when done reading file
     error: loadfail     // name of function to call when failed to read
     });
-
+  //    data:JSONdata,
+    // jsonp: 'callback',
+    // contentType: "application/json",
+    // jsonpCallback: 'processResult', //JSONP handler in SearchDemo
     return false;
   });
 
@@ -294,12 +285,13 @@ var SourceURL = 'http://searchdemo:21530/osisoft/search/admin/sources?callback';
     $.ajax({
       type: 'GET',
       url: SourceURL,    // name of file with our data
-      dataType: 'jsonp',    // type of file we will be reading
-      jsonp: 'callback',
-      jsonpCallback: 'processResult', //JSONP handler in SearchDemo
+      dataType: 'json',    // type of file we will be reading
       success: LoadFormData,// name of function to call when done reading file
       error: loadfail     // name of function to call when failed to read
       });
+
+      //     jsonp: 'callback',
+      // jsonpCallback: 'processResult', //JSONP handler in SearchDemo
   };
 
       // READY FUNCTION
@@ -583,24 +575,24 @@ $(document).ready(function(){
     }); // end of EACH Loop
   };//end of PARSE Function
 
+  // $.ajax({
+  //   type: 'GET',
+  //   url: SourceURL,    // name of file with our data
+  //   dataType: 'jsonp',    // type of file we will be reading
+  //   jsonp: 'callback',
+  //   jsonpCallback: 'processResult', //JSONP handler in SearchDemo
+  //   success: parse,// name of function to call when done reading file
+  //   error: loadfail     // name of function to call when failed to read
+  //   });
+
   $.ajax({
     type: 'GET',
-    url: SourceURL,    // name of file with our data
-    dataType: 'jsonp',    // type of file we will be reading
-    jsonp: 'callback',
-    jsonpCallback: 'processResult', //JSONP handler in SearchDemo
+    url: 'model/source-model.json',    // name of file with our data
+    dataType: 'json',    // type of file we will be reading
     success: parse,// name of function to call when done reading file
     error: loadfail     // name of function to call when failed to read
     });
 
-  // $.ajax({
-  //   type: 'GET',
-  //   url: 'model/source-model.json',    // name of file with our data
-  //   dataType: 'json',    // type of file we will be reading
-  //   success: parse,// name of function to call when done reading file
-  //   error: loadfail     // name of function to call when failed to read
-  //   });
-//
 }); //End Of READY function
 
 </script>

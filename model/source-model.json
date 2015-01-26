@@ -24,7 +24,7 @@
         "ID": 3,
         "LastCrawl": "2013-09-09T13:33:35.9131529-07:00",
         "CrawlerHost": "SearchDemo.osisoft.int",
-        "State": "Ready",
+        "State": "Error",
         "SqlServer": " .",
         "SqlDatabase": "OSISearchShard-3",
         "LastErrorMessage": null
@@ -61,7 +61,7 @@
     },
     {
         "Name": "af:\\\\CHAD-LAPTOP\\TestDB-CHAD-LAPTOP2",
-        "ID": 6,
+        "ID": 7,
         "LastCrawl": "2013-09-09T13:33:38.3037167-07:00",
         "CrawlerHost": "asingh6420.osisoft.int",
         "State": "Ready",
